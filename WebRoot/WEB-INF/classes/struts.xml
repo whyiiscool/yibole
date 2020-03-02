@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.action.excludePattern" value="ws://*"></constant>
+ <package name="default" extends="struts-default">
+    <!-- 用户登录 -->
+    <action name="lgg" class="com.ybl.Action.LoginAction">
+        <result name="success">index.jsp</result>
+        <result name="input">login.jsp</result>
+    </action>
+    <!-- 查看用户 -->
+    <action name="usershow" class="com.ybl.Action.employeeAction" method="selectalluser">
+        <result name="success" >user.jsp</result>
+    </action>
+    
+    <action name="resume1show" class="com.ybl.Action.selectZpAction" method="selectallZp">
+        <result name="success" >job.jsp</result>
+    </action>
+    
+    <action name="adduser" class="com.ybl.Action.AdduserAction" method="addUser" > 
+    	<result name="success">user.jsp</result>
+    </action>
+    <action name="selectuser" class="com.ybl.Action.selectuserAction" method="selectuser">
+    	<result name="success">selectuser.jsp</result>
+    </action>
+    <action name="updateuser" class="com.ybl.Action.updatuserAction" method="updateuser">
+    <result name="success">user.jsp</result>
+    </action>
+    <action name="deleteuser" class="com.ybl.Action.deleteuserAction" method="deleteuser">
+    <result name="success">user.jsp</result>
+    </action>
+    <!-- 查看简历 -->
+    <action name="resumeshow" class="com.ybl.Action.ResumeAction" method="selectallresume">
+        <result name="success" >jianliguanli.jsp</result>
+    </action>
+	<action name="deleteresume" class="com.ybl.Action.Deleteresume" method="deleteresume">
+    <result name="success" >jianliguanli.jsp</result>
+    </action>
+ 
+   	<action name="user1show" class="com.ybl.Action.employerAction" method="selectalluser">
+       <result>user1.jsp</result>
+    </action>
+   <action name="adduser1" class="com.ybl.Action.Adduser1Action" method="addUser" > 
+    	<result name="success">user1.jsp</result>
+    </action>
+    <action name="selectuser1" class="com.ybl.Action.selectuser1Action" method="selectuser">
+    	<result name="success">selecteuser1.jsp</result>
+    </action>
+    <action name="updateuser1" class="com.ybl.Action.updateuser1Action" method="updateuser">
+    	<result name="success">user1.jsp</result>
+    </action>
+    <action name="deletefilm" class="com.ybl.Action.deleteuser1Action" method="deleteuser">
+   		 <result name="success">user1.jsp</result>
+    </action> 
+    
+    <action name="firmregister" class="com.yobole.action.FirmRegisteraction" >
+            <result name="success" >FirmLonin.jsp</result>
+            <result name="failure" >FirmRegister.jsp</result>
+        </action>
+        
+        <action name="firmlogin" class="com.yobole.action.FirmLoginaction" >
+            <result name="success" >user_company.jsp</result>
+            <result name="failure" >FirmLonin.jsp</result>
+        </action>
+       
+        <action name="ModEmployer" class="com.yobole.action.ModEmployeraction" >
+            <result name="success" >my_company.jsp</result>
+            <result name="failure" >my_company.jsp</result>
+        </action>
+  
+        <action name="ZpInformation" class="com.yobole.action.ZpInformationaction" >
+            <result name="success" >ModZp.jsp</result>
+            <result name="failure" >user_company.jsp</result>
+        </action>
+        
+        <action name="delZpInformation" class="com.yobole.action.DelZpInformationaction">
+            <result name="success" >user_company.jsp</result>
+            <result name="failure" >ModZp.jsp</result>
+        </action>
+        
+        <action name="ModZpInformation" class="com.yobole.action.ModZpInformationaction">
+            <result name="success" >user_company.jsp</result>
+            <result name="failure" >ModZp.jsp</result>
+        </action>
+       
+        <action name="AddZpInformation" class="com.yobole.action.AddZpInformationaction">
+            <result name="success" >user_company.jsp</result>
+            <result name="failure" >AddZp.jsp</result>
+        </action>
+        
+        <action name="SelectZpInformation" class="com.yobole.action.SelectZpInformationaction">
+            <result name="success" >user_company_sel.jsp</result>
+            <result name="failure" >user_company.jsp</result>
+        </action>
+        
+        <action name="colletresumeaction" class="com.yobole.action.Collectresumeaction">
+            <result name="success" >user_company_resume.jsp</result>
+            <result name="failure" >user_company_resume.jsp</result>
+        </action>
+        
+        <action name="delcolletresumeaction" class="com.yobole.action.Collectresumeaction" method="del">
+            <result name="success" >user_company_resumecollect.jsp</result>
+            <result name="failure" >Copy of user_company_resume.jsp</result>
+        </action>
+        
+ <action name="login" class="action.PersonalLoginaction">
+<result name="success">Main.jsp</result>
+<result name="failure">failure.jsp</result>
+<result name="input">failure.jsp</result>
+</action>
+
+<action name="register" class="action.PersonalRegisteraction">
+<result name="success">success.jsp</result>
+<result name="failure">failure.jsp</result>
+</action>
+
+<action name="jianli" class="action.Resumeaction">
+<result name="success">companyXx.jsp</result>
+<result name="failure">failure.jsp</result>
+</action>
+
+<action name="rp" class="action.PersonalRegisteraction" method="resetp">
+<result name="success">success.jsp</result>
+<result name="failure">failure.jsp</result>
+</action>
+
+<action name="selectallZp" class="com.ybl.Action.selectZpAction" method="selectallZp">
+<result name="success">personaYp.jsp</result>
+</action>
+
+<action name="MessageAction" class="com.yobole.action.MessageAction">
+<result name="success" >user_company_res.jsp</result>
+<result name="failure" >SendMessage.jsp</result>
+</action>
+
+<!-- 删除职位 -->
+<action name="deletezp" class="com.ybl.Action.ZpAction" method="deletezp">
+<result name="success">job.jsp</result>
+</action>
+
+</package>
+</struts>    
