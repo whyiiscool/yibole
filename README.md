@@ -15,4 +15,3 @@
 
 前端页面用CSS+JavaScript+HTML完成UI设计，后端使用 Hibernate 负责持久层（dao）与MySQL数据库进行连接，使用JSON作为通信格式，后台管理则用Hibernate+Struts2进行开发。
 
-## 界面
